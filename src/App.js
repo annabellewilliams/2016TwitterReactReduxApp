@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
+import Container from 'react-bootstrap/Container';
+
 const App = () => {
   return (
-    <div className="container">
+    <Container>
       <h1>Webpack 4 starter boilerplate template with React, Bootstrap 4</h1>
       <div className="welcome">
         Thanks for using this preconfigured starter template. I really wish it
@@ -22,7 +24,7 @@ const App = () => {
       </p>
       <BgDemo />
       <FormDemo />
-    </div>
+    </Container>
   );
 };
 
