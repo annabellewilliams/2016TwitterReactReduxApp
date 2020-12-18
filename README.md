@@ -1,27 +1,47 @@
-# Webpack 4 starter boilerplate template with React, Bootstrap 4
+# 2016 React Redux Twitter App
 
-> Starter template for projects that use webpack 4 in pair with React, Bootstrap 4 and ES6 Javascript. This project contains configuration for development and production deploy using webpack 4 module bundler and tools which _might_ be helpful
+> A simple React app which displays the Twitter timelines of the 2016 US presidential election candidates. The app was built using React, Redux, and Redux Saga. The project was built on top of a boilerplate template for Webpack 4 configured with React, Bootstrap 4 and ES6 Javascript.
 
+## Developer notes
 
+* During development, I noticed some irregularities with the payload of GET requests, which may be due to the quantity of them being flagged as 'disputed claims.'
+* Bootstrap was chosen to match Twitter's styling more closely.
+* Routes were set up for paths /HillaryClinton and /realDonaldTrump, however nothing is served directly from these paths.
+  (i.e.: going to http://localhost:8080/HillaryClinton will result in a 404 error). Please make sure to load the page from the base URL.
+* The Bearer Token is left in plain text for time/simplicity.
+* My first time working with the Twitter API and I learned that it does not support CORS, so https://cors-anywhere.herokuapp.com was used to be able to make the necessary HTTP requests from the browser.
+* I do not have much experience with Webpack, which is why I chose to go along with a boilerplate code, and added some additional configuration as needed (e.g.: to ensure compatibility with generators).
+* I had never worked with Redux Saga before, so this is my first attempt at implementing the library. I have previous limited experience with using Redux Thunk to handle asynchronous requests within Redux.
+* There are of course many more features I would have liked to implemented. For example:
+    * Hyperlink all links shared by the user and use the link's display name instead of the actual URL
+    * Display shared media (photos, videos, etc.)
+    * Hyperlink mentioned users
+    * Implement a continuous timeline feed
+    * Format the retweet and favorite counts to match that of Twitter (e.g.: 7.2k instead of 7834)
+    * Allow a user to authenticate and interact with the tweets displayed (e.g.: favorite or retweet)
+    * and more!
+    
 ## Getting started
 
-Make sure you install all dependencies first, run npm -i (shorthand for npm install)
+1. Install dependencies
 
 ```
-npm i
+npm install
 ```
 
-To use configured development mode simply run
+2. Start the project in development mode (the app was only tested in development mode in the interest of time).
 
 ```
 npm run start
 ```
 
-To build all files for the production run
+3. Build for production (not yet tested).
 
 ```
 npm run build
 ```
+---
+####The following is taken directly from the boilerplate documentation:
 
 An output is minified via --mode flag which is set to production (already minified, optimized bundle) - additionally **/dist** directory is removed each time you run this script to make sure there are no artifacts left in the output location
 
@@ -56,3 +76,4 @@ npm run dev
 ## License
 
 This project is licensed under MIT license.
+
