@@ -28,8 +28,11 @@
 ## Screenshots
 
 ![alt text](img/2016_Twitter_home.png)
+Home page
 ![alt text](img/2016_Twitter_HRC_view.png)
+Hillary Clinton view
 ![alt text](img/2016_Twitter_DJT_view.png)
+Donald Trump view
 
     
 ## Getting started
