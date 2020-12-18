@@ -4,14 +4,13 @@
 
 ## Developer notes
 
-* During development, I noticed some irregularities with the payload of GET requests, which may be due to the quantity of them being flagged as 'disputed claims.'
-* Bootstrap was chosen to match Twitter's styling more closely.
 * Routes were set up for paths /HillaryClinton and /realDonaldTrump, however nothing is served directly from these paths.
   (i.e.: going to http://localhost:8080/HillaryClinton will result in a 404 error). Please make sure to load the page from the base URL.
 * The Bearer Token is left in plain text for time/simplicity.
 * My first time working with the Twitter API and I learned that it does not support CORS, so https://cors-anywhere.herokuapp.com was used to be able to make the necessary HTTP requests from the browser.
 * I do not have much experience with Webpack, which is why I chose to go along with a boilerplate code, and added some additional configuration as needed (e.g.: to ensure compatibility with generators).
-* I had never worked with Redux Saga before, so this is my first attempt at implementing the library. I have previous limited experience with using Redux Thunk to handle asynchronous requests within Redux.
+* I had never worked with Redux Saga before, so this is my first attempt at implementing the library. I'd had some exposure to Redux Thunk to handle asynchronous requests within Redux, so I understood the need for the library conceptually.
+* Bootstrap was chosen to match Twitter's styling more closely.
 * There are of course many more features I would have liked to implemented. For example:
     * Hyperlink all links shared by the user and use the link's display name instead of the actual URL
     * Display shared media (photos, videos, etc.)
@@ -20,6 +19,18 @@
     * Format the retweet and favorite counts to match that of Twitter (e.g.: 7.2k instead of 7834)
     * Allow a user to authenticate and interact with the tweets displayed (e.g.: favorite or retweet)
     * and more!
+  
+## Some considerations
+* During development, I noticed some irregularities with the payload of GET requests, which may be due to the quantity of them being flagged as 'disputed claims.' This usually results in a single tweet being returned, instead of the expected count.
+* Twitter API responses may be slower than usual. Please inspect your browser's network tab for more information regarding HTTP requests.
+* I encountered one CORS related error while testing the application. Somehow the Access-Control-Allow-Origin header was not recognized. I haven't seen the error since. No fixes were made, the error just disappeared.
+  
+## Screenshots
+
+![alt text](img/2016_Twitter_home.png)
+![alt text](img/2016_Twitter_HRC_view.png)
+![alt text](img/2016_Twitter_DJT_view.png)
+
     
 ## Getting started
 
@@ -41,7 +52,7 @@ npm run start
 npm run build
 ```
 ---
-####The following is taken directly from the boilerplate documentation:
+#### The following is taken directly from the boilerplate documentation:
 
 An output is minified via --mode flag which is set to production (already minified, optimized bundle) - additionally **/dist** directory is removed each time you run this script to make sure there are no artifacts left in the output location
 
