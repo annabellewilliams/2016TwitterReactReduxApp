@@ -1,7 +1,15 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from "redux";
 
-import userReducer from './tweets';
+import { TWEETS_SUCCEEDED } from "../actions/types";
+
+
+const tweetsReducer = (tweets = null, action) => {
+    if (action.type === TWEETS_SUCCEEDED) {
+        return action.payload;
+    }
+    return tweets;
+}
 
 export default combineReducers({
-    timeline: userReducer
+    tweets: tweetsReducer
 });
